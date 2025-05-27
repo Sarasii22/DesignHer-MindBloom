@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./testimonial.css"
-import aisha from "C:/Desktop/MindBloom_competition/MindBloom/frontend/src/assets/people/1.jpg";
-import priya from "C:/Desktop/MindBloom_competition/MindBloom/frontend/src/assets/people/2.jpg";
-import emily from "C:/Desktop/MindBloom_competition/MindBloom/frontend/src/assets/people/3.jpg";
-import sana from "C:/Desktop/MindBloom_competition/MindBloom/frontend/src/assets/people/4.jpg";
-import lara from "C:/Desktop/MindBloom_competition/MindBloom/frontend/src/assets/people/5.jpg";
-import maya from "C:/Desktop/MindBloom_competition/MindBloom/frontend/src/assets/people/6.jpg";
+import aisha from "C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/people/1.jpg";
+import priya from "C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/people/2.jpg";
+import emily from "C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/people/3.jpg";
+import sana from "C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/people/4.jpg";
+import lara from "C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/people/5.jpg";
+import maya from "C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/people/6.jpg";
 
 function Testimonials() {
   const testimonials = [

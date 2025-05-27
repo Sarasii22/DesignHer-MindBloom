@@ -3,13 +3,13 @@ import React from "react";
 import "./Home.css";
 import Testimonials from "../../sections/testimonial/testimonial";
 import GetStarted from "../../sections/GetStarted/GetStarted";
-import missionImage from "C:/Desktop/MindBloom_competition/MindBloom/frontend/src/assets/mission.jpg";
-import moodImage from "C:/Desktop/MindBloom_competition/MindBloom/frontend/src/assets/impact/moods logged.jpg";
-import journalImage from "C:/Desktop/MindBloom_competition/MindBloom/frontend/src/assets/impact/download.jpg";
-import meditationImage from "C:/Desktop/MindBloom_competition/MindBloom/frontend/src/assets/impact/meditation complete.png";
-import moodImage2 from "C:/Desktop/MindBloom_competition/MindBloom/frontend/src/assets/explore/Mood tracker (2).jpg";
-import journalImage2 from "C:/Desktop/MindBloom_competition/MindBloom/frontend/src/assets/explore/journalling.jpg";
-import meditationImage2 from "C:/Desktop/MindBloom_competition/MindBloom/frontend/src/assets/explore/meditation.jpg";
+import missionImage from "C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/mission.jpg";
+import moodImage from "C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/impact/moods logged.jpg";
+import journalImage from "C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/impact/download.jpg";
+import meditationImage from "C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/impact/meditation complete.png";
+import moodImage2 from "C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/explore/Mood tracker (2).jpg";
+import journalImage2 from "C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/explore/journalling.jpg";
+import meditationImage2 from "C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/explore/meditation.jpg";
 
 function Home() {
   return (
