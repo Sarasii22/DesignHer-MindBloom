@@ -1,0 +1,219 @@
+.mood-tracker-page {
+  padding: 2rem 1rem;
+  background: var(--beige) ;
+  min-height: 100vh;
+  align-items: center;
+  left: 50%;
+}
+
+.mood-tracker-page .container {
+  max-width: 1000px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.5s ease-in;
+  border: 2px solid var(--soft-pink);
+}
+
+.mood-tracker-page h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3rem;
+  color: var(--rose-gold);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.mood-tracker-page .mood-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mood-tracker-page .mood-card {
+  background: linear-gradient(135deg, var(--soft-pink), var(--lavender));
+  border: 2px solid var(--rose-gold);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.mood-tracker-page .mood-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(248, 200, 220, 0.5);
+}
+
+.mood-tracker-page .mood-card.selected {
+  border-color: var(--rose-gold);
+  box-shadow: 0 0 0 4px rgba(212, 165, 165, 0.3);
+}
+
+.mood-tracker-page .mood-card .emoji {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.mood-tracker-page .mood-card .mood-name {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  color: var(--dark-gray);
+}
+
+.mood-tracker-page .mood-card .mood-tooltip {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--rose-gold);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  z-index: 10;
+}
+
+.mood-tracker-page .mood-card:hover .mood-tooltip {
+  opacity: 1;
+}
+
+.mood-tracker-page .mood-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s;
+}
+
+.mood-tracker-page .mood-card:hover::after {
+  width: 200px;
+  height: 200px;
+}
+
+.mood-tracker-page .selected-mood {
+  background: var(--lavender);
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+  color: var(--dark-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 2px solid var(--rose-gold);
+}
+
+.mood-tracker-page .selected-mood .emoji {
+  font-size: 1.5rem;
+}
+
+.mood-tracker-page form {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 2rem;
+  border-left: 4px solid var(--soft-pink);
+}
+
+.mood-tracker-page textarea {
+  background: repeating-linear-gradient(
+    transparent,
+    transparent 24px,
+    rgba(248, 200, 220, 0.2) 24px,
+    rgba(248, 200, 220, 0.2) 25px
+  );
+  font-family: 'Caveat', cursive;
+  font-size: 1.125rem;
+  border: none;
+  padding: 1rem;
+}
+
+.mood-tracker-page .button {
+  background: var(--soft-pink);
+}
+
+.mood-tracker-page .button:hover {
+  background: var(--rose-gold);
+  color: var(--white);
+}
+
+.mood-tracker-page .success-message {
+  background: var(--lavender);
+  color: var(--dark-gray);
+  padding: 0.75rem;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInOut 2s forwards;
+}
+
+.mood-tracker-page .stats-section {
+  margin-bottom: 2rem;
+}
+
+.mood-tracker-page .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.mood-tracker-page .stat-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  opacity: 0;
+  animation: slideIn 0.5s forwards;
+  border: 2px solid var(--soft-pink);
+}
+
+.mood-tracker-page .stat-card:nth-child(1) { animation-delay: 0.1s; }
+.mood-tracker-page .stat-card:nth-child(2) { animation-delay: 0.2s; }
+.mood-tracker-page .stat-card:nth-child(3) { animation-delay: 0.3s; }
+
+.mood-tracker-page .stat-card h3 {
+  font-size: 1.5rem;
+  color: var(--rose-gold);
+  margin-bottom: 0.5rem;
+}
+
+.mood-tracker-page .stat-card p {
+  font-size: 1rem;
+  color: var(--gray);
+}
+
+.mood-tracker-page .chart-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  margin-top: 2rem;
+  border: 2px solid var(--lavender);
+}
+
+.mood-tracker-page .chart-card h3 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: var(--rose-gold);
+  margin-bottom: 1rem;
+}
