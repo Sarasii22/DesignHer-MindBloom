@@ -1,0 +1,141 @@
+.all-about-me-container {
+  width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #a3c9f2;
+  border-radius: 10px;
+  background-color: #f5faff;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+.title {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.hobbies-section, .fun-facts-section, .likes-section, .grow-up-section {
+  border: 2px solid #d6a8e9;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.hobbies-section {
+  width: 30%;
+}
+
+.lined-box {
+  margin-top: 10px;
+}
+
+.line {
+  border-bottom: 1px solid #d6a8e9;
+  margin: 5px 0;
+}
+
+.astronaut-placeholder {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-section {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-box {
+  border: 2px solid #d6a8e9;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.info-box h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.middle-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.fun-facts-section, .likes-section {
+  width: 30%;
+  position: relative;
+}
+
+.favorites-section {
+  width: 30%;
+  border: 2px solid #d6a8e9;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+  position: relative;
+}
+
+.favorites-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.favorites-section ul li {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.heart-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.bottom-section {
+  display: flex;
+  justify-content: center;
+}
+
+.grow-up-section {
+  width: 100%;
+  position: relative;
+}
+
+.ghost-left-placeholder {
+  position: absolute;
+  left: -30px;
+  top: 20px;
+}
+
+.ghost-bottom-placeholder {
+  position: absolute;
+  left: -30px;
+  bottom: 20px;
+}
+
+.placeholder-text {
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+
+h2 {
+  font-size: 16px;
+  color: #333;
+  margin: 0 0 10px 0;
+}
