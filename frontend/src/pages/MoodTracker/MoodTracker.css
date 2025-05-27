@@ -1,46 +1,49 @@
 .mood-tracker-page {
   padding: 2rem 1rem;
-  background: var(--beige) ;
+  background: linear-gradient(0, #D5E7FD 0%, #E0E0FC 23%, #EADAFA 38%, #F4D4F9 70%, #F2CBF7 89%, #F0C3F6 100%);
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  left: 50%;
 }
 
 .mood-tracker-page .container {
-  max-width: 1000px;
+  width: 1305px;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
   padding: 2rem;
   box-shadow: var(--shadow);
   animation: fadeIn 0.5s ease-in;
-  border: 2px solid var(--soft-pink);
+  border: 4px solid var(--text-color7);
 }
 
 .mood-tracker-page h2 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 3rem;
-  color: var(--rose-gold);
+  font-family: 'Margarine', cursive;
+  font-size: 56px;
+  color: var(--text-color7);
   text-align: center;
   margin-bottom: 1.5rem;
+  font-weight: 150;
 }
 
 .mood-tracker-page .mood-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1.5fr));
+  gap: 2rem;
   margin-bottom: 2rem;
 }
 
 .mood-tracker-page .mood-card {
   background: linear-gradient(135deg, var(--soft-pink), var(--lavender));
-  border: 2px solid var(--rose-gold);
-  border-radius: 12px;
+  border: 2px solid #A575AB;
+  border-radius: 30px;
   padding: 1rem;
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
   position: relative;
   overflow: hidden;
+  font-family: 'Vivaldi';
 }
 
 .mood-tracker-page .mood-card:hover {
@@ -59,9 +62,9 @@
 }
 
 .mood-tracker-page .mood-card .mood-name {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Tsukimi Rounded';
   font-size: 0.875rem;
-  color: var(--dark-gray);
+  color: var(--primary-text-color);
 }
 
 .mood-tracker-page .mood-card .mood-tooltip {
@@ -69,10 +72,9 @@
   top: -60px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--rose-gold);
-  color: var(--white);
+  background: #FFFFFF;
   padding: 0.5rem 1rem;
-  border-radius: 12px;
+  border-radius: 40px;
   font-family: 'Dancing Script', cursive;
   font-size: 1rem;
   white-space: nowrap;
@@ -130,24 +132,29 @@
   padding: 1.5rem;
   box-shadow: var(--shadow);
   margin-bottom: 2rem;
-  border-left: 4px solid var(--soft-pink);
+  border-left: 4px solid #EEBAE0;
+  width: 1205px;
+  height: 359px;
 }
 
 .mood-tracker-page textarea {
-  background: repeating-linear-gradient(
-    transparent,
-    transparent 24px,
-    rgba(248, 200, 220, 0.2) 24px,
-    rgba(248, 200, 220, 0.2) 25px
-  );
+  background: repeating-linear-gradient(transparent, transparent 24px, rgba(248, 200, 220, 0.2) 24px, rgba(248, 200, 220, 0.2) 25px);
   font-family: 'Caveat', cursive;
   font-size: 1.125rem;
   border: none;
   padding: 1rem;
+  width: 100%;
+  height: 80%;
+  resize: none;
 }
 
 .mood-tracker-page .button {
-  background: var(--soft-pink);
+  background: var(--btn-color3);
+  width: 155px;
+  height: 50px;
+  border-radius: 25px;
+  color: var(--primary-text-color);
+  font-size: 22px;
 }
 
 .mood-tracker-page .button:hover {
@@ -168,38 +175,51 @@
 
 .mood-tracker-page .stats-section {
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mood-tracker-page .stats-section h2{
+  font-family: 'Margarine', cursive;
+  font-size: 56px;
+  color: var(--text-color7);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 150;
 }
 
 .mood-tracker-page .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  gap: 91px;
+  max-width: 1055px;
+  height: 132px;
 }
 
 .mood-tracker-page .stat-card {
   background: var(--white);
-  border-radius: 16px;
+  border-radius: 25px;
   padding: 1.5rem;
   text-align: center;
   box-shadow: var(--shadow);
-  opacity: 0;
-  animation: slideIn 0.5s forwards;
-  border: 2px solid var(--soft-pink);
+  border: 2px solid #F4D1D1;
+  width: 291px;
 }
 
-.mood-tracker-page .stat-card:nth-child(1) { animation-delay: 0.1s; }
-.mood-tracker-page .stat-card:nth-child(2) { animation-delay: 0.2s; }
-.mood-tracker-page .stat-card:nth-child(3) { animation-delay: 0.3s; }
-
 .mood-tracker-page .stat-card h3 {
-  font-size: 1.5rem;
-  color: var(--rose-gold);
+  font-size: 24px;
+  color: #EEBBBB;
   margin-bottom: 0.5rem;
+  font-family: 'Tsukimi Rounded';
+
 }
 
 .mood-tracker-page .stat-card p {
   font-size: 1rem;
-  color: var(--gray);
+  color: #676767;
+  font-family: 'Tsukimi Rounded';
 }
 
 .mood-tracker-page .chart-card {
@@ -208,12 +228,16 @@
   padding: 1.5rem;
   box-shadow: var(--shadow);
   margin-top: 2rem;
-  border: 2px solid var(--lavender);
+  
+  
 }
 
 .mood-tracker-page .chart-card h3 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2.5rem;
-  color: var(--rose-gold);
-  margin-bottom: 1rem;
+  font-family: 'Margarine', cursive;
+  font-size: 56px;
+  color: var(--text-color7);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 150;
+
 }

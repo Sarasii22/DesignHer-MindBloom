@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./GetStarted.css";
+import "./GetStarted.css"; // Adjust the path as necessary
 
 function GetStarted() {
   return (

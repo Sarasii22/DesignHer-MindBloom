@@ -1,6 +1,6 @@
 import React from 'react';
 import AllAboutMe from '../../components/AllAboutMe/AllAboutMe'; // Adjust the import path as necessary
-import './Journal.css'; // Import the CSS for the journal page
+import './Journal.css'; // Adjust the path as necessary
 
 const JournalPage = () => {
   return (

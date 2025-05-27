@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
-import "./Home.css";
+import "./Home.css"; // Adjust the path as necessary
 import Testimonials from "../../sections/testimonial/testimonial";
 import GetStarted from "../../sections/GetStarted/GetStarted";
 import missionImage from "C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/mission.jpg";

@@ -1,13 +1,54 @@
-body {
+/* Reset and base styles */
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  background: linear-gradient(135deg, #F9F9F9 0%, #EDEDED 100%);
+  color: #333;
+  line-height: 1.6;
 }
+
+/* Colors */
+:root {
+  --soft-blue: #ADD8E6;
+  --beige: #F5F5DC;
+  --soft-pink: #F8C8DC;
+  --lavender: #E6E6FA;
+  --rose-gold: #D4A5A5;
+  --coral: #FF9999;
+  --mint: #A8E4A0;
+  --sepia: #8B6F47;
+  --white: #FFFFFF;
+  --gray: #666;
+  --dark-gray: #333;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --primary-text-color: #000000;
+  --text-color1: #8C7979;
+  --text-color2: #6B5C5C;
+  --text-color3: #FDF6FE;
+  --text-color4: #624565;
+  --text-color5: #EDB7F4;
+  --text-color6: #FFE8E8;
+  --text-color7: #A575AB;
+  --text-color8: #676767;
+  --text-color9: #585B69;
+  --text-color10: #5C2D2D;
+  --text-color11: #6499B5;
+  --text-color12: #FFFCFC;
+  --btn-color1: #B3E5FF;
+  --btn-color2: #EEBBBB;
+  --btn-color3: #F0C3F6;
+  --btn-color4: #3B5B6B;
+  --btn-color5: #80C5E8;
+  --btn-color6: #F5D6F9;
+
+}
+
+
+
+
+

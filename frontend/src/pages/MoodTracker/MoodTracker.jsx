@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
-import './MoodTracker.css'; // Ensure you have the appropriate CSS for styling
+import './MoodTracker.css'; // Adjust the path as necessary
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -82,9 +82,9 @@ function MoodTracker() {
     <div className="mood-tracker-page">
       <div className="container">
         <h2>Mood Tracker</h2>
-        {showSuccess && <div className="success-message" role="alert">Mood logged successfully!</div>}
+        {showSuccess && <div className="success-message">Mood logged successfully!</div>}
 
-        <div className="mood-grid" aria-label="Select your mood">
+        <div className="mood-grid">
           {moodOptions.map((mood) => (
             <div
               key={mood.name}
@@ -93,7 +93,6 @@ function MoodTracker() {
               role="button"
               tabIndex={0}
               onKeyDown={(e) => e.key === 'Enter' && setSelectedMood(mood)}
-              aria-label={`Select ${mood.name} mood`}
             >
               <span className="emoji">{mood.emoji}</span>
               <span className="mood-name">{mood.name}</span>
@@ -103,25 +102,23 @@ function MoodTracker() {
         </div>
 
         {selectedMood && (
-          <div className="selected-mood" aria-live="polite">
+          <div className="selected-mood">
             <span className="emoji">{selectedMood.emoji}</span>
             <span>{selectedMood.message}</span>
           </div>
         )}
 
-        <form aria-label="Mood logging form">
+        <form>
           <textarea
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             placeholder="Add notes (optional)"
-            aria-label="Mood notes"
           />
           <button
             type="button"
             className="button"
             onClick={logMood}
             disabled={!selectedMood}
-            aria-label="Save selected mood"
           >
             Save Mood
           </button>
@@ -129,7 +126,7 @@ function MoodTracker() {
 
         {moods.length > 0 && (
           <>
-            <section className="stats-section" aria-label="Mood statistics">
+            <section className="stats-section">
               <h2>Mood Stats</h2>
               <div className="stats-grid">
                 <div className="stat-card">
@@ -165,7 +162,6 @@ function MoodTracker() {
                     tooltip: { enabled: true },
                   },
                 }}
-                aria-label="Mood trends chart"
               />
             </div>
           </>
