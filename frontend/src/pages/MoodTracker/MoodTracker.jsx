@@ -1,14 +1,21 @@
 import { useState } from 'react';
 import { Line } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
-import './MoodTracker.css'; // Adjust the path as necessary
+import './MoodTracker.css';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 function MoodTracker() {
   const [selectedMood, setSelectedMood] = useState(null);
   const [notes, setNotes] = useState('');
-  const [moods, setMoods] = useState(JSON.parse(localStorage.getItem('moods')) || []);
+  const [moods, setMoods] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem('moods')) || [];
+    } catch (e) {
+      console.error('Failed to parse moods from localStorage:', e);
+      return [];
+    }
+  });
   const [showSuccess, setShowSuccess] = useState(false);
 
   const moodOptions = [
@@ -21,6 +28,9 @@ function MoodTracker() {
     { name: 'Angry', emoji: '😣', message: 'Frustrated, need to cool off.' },
     { name: 'Relaxed', emoji: '😌', message: 'Chilled out and at peace.' },
     { name: 'Inspired', emoji: '🌟', message: 'Feeling creative and motivated!' },
+    { name: 'Content', emoji: '🙂', message: 'Feeling satisfied and at ease.' },
+    { name: 'Bored', emoji: '😒', message: 'Feeling a bit restless and uninspired.' },
+    { name: 'Confused', emoji: '😕', message: 'Feeling puzzled and unsure today.' },
   ];
 
   const logMood = () => {
@@ -45,10 +55,13 @@ function MoodTracker() {
           Excited: 8,
           Inspired: 7,
           Relaxed: 6,
+          Content: 5.5,
           Neutral: 5,
           Sad: 4,
+          Bored: 3.5,
           Stressed: 3,
           Anxious: 2,
+          Confused: 1.5,
           Angry: 1,
         }[m.mood] || 5)),
         borderColor: '#6A5ACD',
@@ -70,10 +83,13 @@ function MoodTracker() {
         Excited: 8,
         Inspired: 7,
         Relaxed: 6,
+        Content: 5.5,
         Neutral: 5,
         Sad: 4,
+        Bored: 3.5,
         Stressed: 3,
         Anxious: 2,
+        Confused: 1.5,
         Angry: 1,
       }[m.mood] || 5), 0) / moods.length).toFixed(1)
     : 0;
@@ -101,14 +117,7 @@ function MoodTracker() {
           ))}
         </div>
 
-        {selectedMood && (
-          <div className="selected-mood">
-            <span className="emoji">{selectedMood.emoji}</span>
-            <span>{selectedMood.message}</span>
-          </div>
-        )}
-
-        <form>
+        <form onSubmit={(e) => e.preventDefault()}>
           <textarea
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
@@ -123,6 +132,13 @@ function MoodTracker() {
             Save Mood
           </button>
         </form>
+
+        {selectedMood && (
+          <div className="selected-mood" role="status" aria-live="polite">
+            <span className="emoji">{selectedMood.emoji}</span>
+            <span>{selectedMood.message}</span>
+          </div>
+        )}
 
         {moods.length > 0 && (
           <>
