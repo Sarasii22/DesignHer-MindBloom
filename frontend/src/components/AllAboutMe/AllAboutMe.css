@@ -1,95 +1,203 @@
 .all-about-me-container {
-  width: 600px;
-  margin: 20px auto;
+  background-color: #F4FBFF;
   padding: 20px;
-  background: #f0e6f0;
-  border: 2px solid #d3a4d3;
-  border-radius: 20px;
-  position: relative;
+  border-radius: 100px;
   font-family: Arial, sans-serif;
+  max-width: 800px;
+  align-items: center;
+  justify-content: center;
+  border-color: var(--text-color7);
+  border-style: solid;
+  border-width: 2px;
 }
 
-h1 {
+.all-about-me-container h1 {
   text-align: center;
-  color: #333;
+  color: var(--btn-color4);
   margin-bottom: 20px;
+  font-family: 'Margarine', cursive;
+  font-weight: 90;
+  font-size: 56px;
 }
 
 .section {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.box {
-  background: #e6c3e6;
-  border: 2px solid #d3a4d3;
-  border-radius: 10px;
+.hobbies {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hobbies .input-section {
+  flex: 1;
+  margin: 0 10px;
+  background-color: #FFFFFF;
+  border-radius: 50px;
+  width: 310px;
+  height: 379px;
+  border: 2px solid #000000;
+  align-items: center;
   padding: 10px;
-  width: 30%;
+}
+
+.hobbies .input-section h2 {
   text-align: center;
-  position: relative;
-}
-
-.hobbies, .fun-facts, .likes, .grow-up {
-  height: 150px;
-}
-
-.name, .age, .address {
-  height: 40px;
+  color: var(--text-color7);
   margin-bottom: 10px;
+  font-family: 'Margarine', cursive;
+  font-weight: 90;
+  margin-top: 15px;
+}
+
+.hobbies .input-section textarea {
+  width: 100%;
+  height: 250px;
+  background: repeating-linear-gradient(transparent, transparent 24px, #d4b4b4 24px, #ceb1b1 25px);
+  outline: none;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+  border: none; 
+  margin-top: 8px;
+
+}
+
+.hobbies .doodle-icon {
+  width: 224.97px;
+  height: 225.44px;
+  margin-right: 20px;
+  border-radius: 32px;
+  transform: rotate(-15deg);
+}
+
+.personal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.personal-info .input-section {
+  padding: 0;
+  margin-bottom: 20px;
+  border: none;
+  background: none;
+  width: 100%;
+}
+
+.personal-info .input-section div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.personal-info .input-section .name {
+  background-color: #fce4ec;
+}
+
+.personal-info .input-section .age {
+  background-color: #e6f0fa;
+}
+
+.personal-info .input-section .address {
+  background-color: #fce4ec;
+}
+
+.personal-info .input-section label {
+  width: 60px;
+  color: #9b59b6;
+  margin-right: 10px;
+  text-align: right;
+}
+
+.personal-info .input-section textarea {
+  width: 200px;
+  height: 60px;
+  background: none;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  flex: 1;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+}
+
+.fun-likes-favorites {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-sections {
+  flex: 1;
+}
+
+.fun-facts, .likes {
+  display: flex;
+  align-items: center;
 }
 
 .favorites {
-  height: 200px;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  align-items: center;
+  flex: 1;
 }
 
-.favorites ul {
-  list-style: none;
-  padding: 0;
-  text-align: left;
+.favorites .input-section {
+  flex: 1;
 }
 
-.lines {
-  height: 80%;
+.labeled-input {
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
 }
 
-.lines::before {
-  content: "_______";
-  color: #ccc;
+.labeled-input label {
+  width: 60px;
+  color: #9b59b6;
+  margin-right: 10px;
 }
 
-.doodle {
-  position: absolute;
+.labeled-input input {
+  flex: 1;
+  background-color: #fce4ec;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
 }
 
-.astronaut {
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
+.input-section h2 {
+  color: #9b59b6;
+  margin-bottom: 10px;
+}
+
+.input-section input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.doodle-icon {
   width: 50px;
+  height: 50px;
+  margin-right: 20px;
 }
 
-.ghost-left {
-  bottom: -30px;
-  left: -20px;
-  width: 40px;
+.future {
+  flex-direction: row-reverse;
 }
 
-.ghost-bottom {
-  bottom: -30px;
-  right: -20px;
-  width: 40px;
-}
-
-.heart {
-  bottom: -30px;
-  right: -20px;
-  width: 40px;
+.future .doodle-icon {
+  margin-left: 20px;
+  margin-right: 0;
 }

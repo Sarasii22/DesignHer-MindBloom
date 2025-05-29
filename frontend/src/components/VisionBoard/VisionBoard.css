@@ -1,0 +1,116 @@
+.vision-board-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  gap: 5px;
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.grid-cell {
+  background-color: #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Adjust cell sizes based on the design */
+.cell-0 { grid-column: 1; grid-row: 1; }
+.cell-1 { grid-column: 2; grid-row: 1; }
+.cell-2 { grid-column: 3; grid-row: 1; }
+.cell-3 { grid-column: 4; grid-row: 1; }
+.cell-4 { grid-column: 5; grid-row: 1; }
+.cell-5 { grid-column: 1; grid-row: 2; }
+.cell-6 { grid-column: 2; grid-row: 2; }
+.cell-7 { grid-column: 3; grid-row: 2; }
+.cell-8 { grid-column: 4 / span 2; grid-row: 2; }
+.cell-9 { grid-column: 1; grid-row: 3; }
+.cell-10 { grid-column: 2; grid-row: 3; }
+.cell-11 { grid-column: 4; grid-row: 3; }
+.cell-12 { grid-column: 5; grid-row: 3; }
+.cell-13 { grid-column: 1; grid-row: 4; }
+.cell-14 { grid-column: 2 / span 2; grid-row: 4; }
+.cell-15 { grid-column: 4; grid-row: 4; }
+.cell-16 { grid-column: 5; grid-row: 4; }
+.cell-17 { grid-column: 1; grid-row: 5; }
+.cell-18 { grid-column: 2; grid-row: 5; }
+.cell-19 { grid-column: 3; grid-row: 5; }
+.cell-20 { grid-column: 4 / span 2; grid-row: 5; }
+
+.camera-label {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.camera-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.uploaded-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.phrase {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Margarine', cursive;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+  color: #ff69b4;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 2px 5px;
+  border-radius: 5px;
+  z-index: 2; /* Ensure phrase is above the image */
+  opacity: 0; /* Hidden by default */
+}
+
+.phrase.visible {
+  opacity: 1; /* Show phrase if it exists */
+}
+
+/* Alternate color for some phrases */
+.cell-2 .phrase,
+.cell-9 .phrase,
+.cell-14 .phrase {
+  color: #9b59b6;
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 228, 196, 0.8);
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 3; /* Ensure center text is above everything */
+}
+
+.center-text h1 {
+  color: #9b59b6;
+  font-size: 24px;
+  margin: 0;
+  font-family: 'Margarine', cursive;
+}
