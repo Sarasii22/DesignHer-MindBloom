@@ -17,13 +17,13 @@ const VisionBoard = () => {
   };
 
   const phrases = [
-    { text: "ALWAYS WIN", left: 50, top: 50, purple: false },
-    { text: "I AM FOCUSED", left: 900, top: 100, purple: true },
-    { text: "KEEP GOING", left: 500, top: 20, purple: false },
-    { text: "I AM DISCIPLINED", left: 100, top: 400, purple: true },
-    { text: "I CAN, AND I WILL", left: 150, top: 900, purple: false },
-    { text: "I AM A FAST LEARNER", left: 700, top: 1100, purple: true },
-    { text: "I WILL CREATE THE LIFE I WANT", left: 300, top: 1200, purple: false },
+    { text: " I ALWAYS WIN", left: 150, top: 150, purple: false },
+    { text: "I AM FOCUSED", left: 900, top: 0, purple: true },
+    { text: "KEEP GOING", left: 600, top: 290, purple: false },
+    { text: "I AM DISCIPLINED", left: 0, top: 425, purple: true },
+    { text: "I CAN, AND I WILL", left: 150, top: 890, purple: false },
+    { text: "I AM A FAST LEARNER", left: 700, top: 880, purple: true },
+    { text: "I WILL CREATE THE LIFE I WANT", left: 500, top: 1155, purple: false },
   ];
 
   return (
@@ -61,7 +61,8 @@ const VisionBoard = () => {
         </div>
       ))}
       <div className="center-text">
-        <h1>____ IS MY YEAR...</h1>
+        <textarea placeholder='Year'></textarea>
+        <h1> IS MY YEAR...</h1>
       </div>
     </div>
   );

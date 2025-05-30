@@ -1,7 +1,7 @@
 .vision-board-container {
   position: relative;
-  width: 1122px;
-  height: 1432px;
+  width: 1000px;
+  height: 1200px;
   margin: 0 auto;
   background-color: #f0f0f0;
   overflow: hidden;
@@ -65,13 +65,17 @@
   color: #9b59b6;
 }
 
+
 .center-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(255, 228, 196, 0.8);
-  padding: 15px 30px;
+ align-items: center;
+ text-align: center;
+ padding: auto;
+ padding-top: 5px;
   border-radius: 15px;
   z-index: 11; /* Above everything */
 }
@@ -81,4 +85,17 @@
   font-size: 36px;
   margin: 0;
   font-family: 'Margarine', cursive;
+}
+
+.center-text textarea{
+  width: 80%;
+  background: repeating-linear-gradient(transparent, transparent 24px, #d4b4b4 24px, #ceb1b1 25px);
+  outline: none;
+  resize: vertical;
+  font-family: Arial, sans-serif;
+  border: none; 
+  margin-top: 8px;
+  font-size: 20px;
+  text-align: center;
+  color: #9b59b6;
 }
