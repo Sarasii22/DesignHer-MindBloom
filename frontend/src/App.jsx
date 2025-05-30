@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home"; // Adjust the import path as necessary
 import Footer from "./components/Footer/Footer";
 import MoodTracker from "./pages/MoodTracker/MoodTracker";
 import JournalPage  from "./pages/Journal/Journal";
+import MeditationPage from "./pages/MeditationPage/MeditationPage";
 
 function App(){
     return (
@@ -18,6 +19,7 @@ function App(){
                     <Route path="/mood-tracker" element={<MoodTracker />} />
                     {/* Add other routes as needed */}
                     <Route path="/journal" element={<JournalPage />} />
+                    <Route path="/meditations" element={<MeditationPage />} />
                 </Routes>
                 <Footer />
                 
