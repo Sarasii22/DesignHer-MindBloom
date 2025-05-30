@@ -1,0 +1,47 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+textarea {
+  resize: none;
+}
+
+.bg-purple-100 {
+  background-color: #e0d7f5;
+}
+
+.bg-pink-100 {
+  background-color: #fdd8e8;
+}
+
+.bg-pink-200 {
+  background-color: #f8c8dc;
+}
+
+.bg-pink-300 {
+  background-color: #f4a3c6;
+}
+
+.bg-purple-200 {
+  background-color: #c7b8ea;
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}
+
+.shadow-lg {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.max-w-2xl {
+  max-width: 40rem;
+}
+
+.ml-\[15px\] {
+  margin-left: 15px;
+}
+
+.ml-\[5px\] {
+  margin-left: 5px;
+}
