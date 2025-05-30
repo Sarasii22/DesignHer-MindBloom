@@ -5,13 +5,12 @@ import heartIcon from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/jo
 import ghostHappyIcon from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/melting_13879044.png';
 import ghostSmileyIcon from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/witch_16086401.png';
 
-
 const AllAboutMe = () => {
   return (
     <div className="all-about-me-container">
       <h1>All About Me</h1>
       <div className="section hobbies">
-        <div className="input-section">
+        <div className="input-section hobbies-white">
           <h2>My Hobbies</h2>
           <textarea placeholder="Write about your hobbies here..."></textarea>
         </div>
@@ -34,51 +33,51 @@ const AllAboutMe = () => {
       <div className="section fun-likes-favorites">
         <div className="left-sections">
           <div className="section fun-facts">
-            <div className="input-section">
+            <div className="input-section pink-section">
               <h2>Fun Facts About Me</h2>
-              <input type="text" placeholder="Write a fun fact here..." />
-              <input type="text" placeholder="Write a fun fact here..." />
+              <textarea placeholder="Write a fun fact here..."></textarea>
+              <textarea placeholder="Write a fun fact here..."></textarea>
             </div>
           </div>
           <div className="section likes">
             <img src={ghostSmileyIcon} alt="Ghost Smiley" className="doodle-icon" />
-            <div className="input-section">
+            <div className="input-section likes-white">
               <h2>Likes</h2>
-              <input type="text" placeholder="Write what you like here..." />
-              <input type="text" placeholder="Write what you like here..." />
+              <textarea placeholder="Write what you like here..."></textarea>
+              <textarea placeholder="Write what you like here..."></textarea>
             </div>
           </div>
         </div>
         <div className="section favorites">
-          <div className="input-section">
+          <div className="input-section favorites-white">
             <h2>My Favorite</h2>
             <div className="labeled-input">
               <label>Color :</label>
-              <input type="text" placeholder="Your favorite color..." />
+              <textarea placeholder="Your favorite color..."></textarea>
             </div>
             <div className="labeled-input">
               <label>Food :</label>
-              <input type="text" placeholder="Your favorite food..." />
+              <textarea placeholder="Your favorite food..."></textarea>
             </div>
             <div className="labeled-input">
               <label>Pet :</label>
-              <input type="text" placeholder="Your favorite pet..." />
+              <textarea placeholder="Your favorite pet..."></textarea>
             </div>
             <div className="labeled-input">
               <label>Music :</label>
-              <input type="text" placeholder="Your favorite music..." />
+              <textarea placeholder="Your favorite music..."></textarea>
             </div>
             <div className="labeled-input">
               <label>Place :</label>
-              <input type="text" placeholder="Your favorite place..." />
+              <textarea placeholder="Your favorite place..."></textarea>
             </div>
             <div className="labeled-input">
               <label>Sport :</label>
-              <input type="text" placeholder="Your favorite sport..." />
+              <textarea placeholder="Your favorite sport..."></textarea>
             </div>
             <div className="labeled-input">
               <label>Subject :</label>
-              <input type="text" placeholder="Your favorite subject..." />
+              <textarea placeholder="Your favorite subject..."></textarea>
             </div>
           </div>
           <img src={heartIcon} alt="Heart" className="doodle-icon" />
@@ -86,10 +85,10 @@ const AllAboutMe = () => {
       </div>
       <div className="section future">
         <img src={ghostHappyIcon} alt="Ghost Happy" className="doodle-icon" />
-        <div className="input-section">
+        <div className="input-section pink-section">
           <h2>When I Grow Up I Want To Be</h2>
-          <input type="text" placeholder="Write your dream here..." />
-          <input type="text" placeholder="Write your dream here..." />
+          <textarea placeholder="Write your dream here..."></textarea>
+          <textarea placeholder="Write your dream here..."></textarea>
         </div>
       </div>
     </div>

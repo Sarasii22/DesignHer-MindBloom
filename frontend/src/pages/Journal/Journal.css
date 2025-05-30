@@ -1,10 +1,16 @@
 .journal-page {
-  width: 1305px;
-  margin: 20px auto;
+  width: 100%;
   padding: 20px;
-  border: 2px solid #a3c9f2;
   border-radius: 10px;
-  background-color: #fff;
+  background: linear-gradient(
+    -118deg,
+    #D5E7FD 0%,
+    #E0E0FC 23%,
+    #EADAFA 38%,
+    #F4D4F9 70%,
+    #F2CBF7 89%,
+    #F0C3F6 100%
+  );
   font-family: Arial, sans-serif;
 }
 
@@ -16,9 +22,14 @@
 }
 
 .journal-content {
+  background-color: var(--white);
   display: flex;
   flex-direction: column;
+  padding: 40px;
+  margin: 20px;
   gap: 20px;
+  border: 2px solid #d6a8e9; /* Added border with matching color */
+  border-radius: 60px; /* Added border radius to match journal-page */
 }
 
 .empty-space {

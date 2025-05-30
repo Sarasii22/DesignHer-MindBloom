@@ -1,47 +1,422 @@
+:root {
+  --soft-pink: #F8E3FB;
+  --lavender: #E1E5FC;
+  --text-color1: #4a4a4a;
+  --text-color7: #c7b8ea;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0; 
+  padding: 0;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  justify-content: center;
+  align-items: center;
 }
 
-textarea {
-  resize: none;
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Changed from 100vw */
+  max-width: 1119px;
+  margin: 80px auto 0;
+  padding: 0 15px; /* Added for responsiveness */
+  background-color: #ffffff;
 }
 
-.bg-purple-100 {
-  background-color: #e0d7f5;
+.planner-container {
+  width: 100%; /* Changed from 100vw */
+  max-width: 1119px;
+  height: 1432px;
+  border-radius: 100px;
+  border: 2px solid #A575AB;
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 20px;
 }
 
-.bg-pink-100 {
-  background-color: #fdd8e8;
+.planner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1019px;
+  margin-bottom: 1.5rem;
+  font-family: 'Manuale', sans-serif;
 }
 
-.bg-pink-200 {
-  background-color: #f8c8dc;
+.planner-buttons {
+  display: flex;
+  gap: 94px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+  position: relative;
+  width: 100%; /* Added to respect parent width */
 }
 
-.bg-pink-300 {
+.planner-button {
+  background: linear-gradient(135deg, var(--soft-pink), var(--lavender));
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'Tsukimi Rounded', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 250px;
+  height: 100px;
+}
+
+.planner-button:hover {
   background-color: #f4a3c6;
 }
 
-.bg-purple-200 {
-  background-color: #c7b8ea;
+.doodle-icon {
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
 }
 
-.rounded {
-  border-radius: 0.5rem;
+.planner-buttons .doodle-icon:nth-child(1) {
+  left: 0; /* Adjusted */
+  top: 3rem;
+  width: 94px;
+  height: 94px;
 }
 
-.shadow-lg {
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+.planner-buttons .doodle-icon:nth-child(5) {
+  right: 0; /* Adjusted */
+  top: -4rem;
+  width: 94px;
+  height: 94px;
 }
 
-.max-w-2xl {
-  max-width: 40rem;
+.planner-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-color1);
 }
 
-.ml-\[15px\] {
+.date-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.date-text {
+  color: #f4a3c6;
+  font-size: 1rem;
+}
+
+.calendar-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+.calendar-container {
+  position: absolute;
+  top: 6rem;
+  right: 1rem;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  z-index: 20;
+  width: 320px;
+  border: 2px solid #A575AB;
+  font-family: 'Manuale', sans-serif;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.calendar-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-color1);
+}
+
+.calendar-nav-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #A575AB;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+.calendar-nav-button:hover {
+  color: #ffffff;
+  background-color: #A575AB;
+  border-radius: 0.25rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.75rem;
+}
+
+.calendar-day-header {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-color1);
+  padding: 0.5rem 0;
+}
+
+.calendar-blank {
+  height: 2.75rem;
+}
+
+.calendar-day {
+  padding: 0.75rem;
+  text-align: center;
+  background-color: #f3f4f6;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.calendar-day:hover {
+  background-color: #A575AB;
+  color: #ffffff;
+}
+
+.calendar-day-selected {
+  background-color: #f4a3c6;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.planner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.section {
+  padding: 1rem;
+  border-radius: 20px;
+  position: relative;
+}
+
+.section-title {
+  font-family: 'Margarine', sans-serif;
+  font-size: 32px !important;
+  font-weight: 300 !important;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: var(--text-color1) !important;
+}
+
+.things-to-do, .notes-to-self {
+  background-color: var(--lavender);
+  margin-left: 0;
+  width: 465px;
+  height: 530px;
+  margin-left: 30px;
+}
+
+.extra-goals {
+  background-color: var(--soft-pink);
   margin-left: 15px;
+  width: 450px;
+  height: 530px;
 }
 
-.ml-\[5px\] {
+.notes-to-self {
+  background-color: var(--soft-pink);
+  margin-left: 15px;
+  width: 520px;
+  height: 476px;
+}
+
+.for-next {
   margin-left: 5px;
+}
+
+.quote-section {
+  width: 385px;
+  height: 72px;
+  background-color: var(--text-color7);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 30px;
+}
+
+.quote-title {
+  font-family: 'Inria Sans', sans-serif !important;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 26px !important;
+  text-transform: capitalize !important;
+  text-align: center;
+  color: #ffffff;
+}
+
+.for-next-section {
+  background-color: var(--lavender);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 465px;
+  height: 315px;
+}
+
+.section-textarea {
+  width: 100%;
+  height: 80%;
+  background: repeating-linear-gradient(transparent, transparent 24px, #d4b4b4 24px, #ceb1b1 25px);
+  outline: none;
+  resize: vertical;
+  border: none;
+  border-radius: 0.25rem;
+  resize: none;
+  font-size: 20px !important;
+}
+
+.for-next-textarea {
+  height: 3rem;
+}
+
+.section-doodle {
+  width: 15rem;
+  height: 15rem;
+  position: absolute;
+}
+
+.things-to-do .section-doodle {
+  bottom: -45px;
+  left: -100px;
+}
+
+.extra-goals .section-doodle {
+  width: 9rem;
+  height: 10rem;
+  top: -50px;
+  right: -50px;
+}
+
+.notes-to-self .section-doodle {
+  bottom: -65px;
+  right: -110px;
+}
+
+/* Existing styles remain unchanged unless specified */
+.action-buttons {
+  display: flex;
+  justify-content: space-between; /* Maintains space between buttons */
+  gap: 1rem; /* Adds a 1rem gap between buttons */
+  margin-top: 1rem;
+  width: 100%; /* Ensures full width for proper spacing */
+}
+
+.save-button {
+  background-color: #F5D6F9;
+  padding: 0.75rem 1.5rem; /* Increased padding for better size */
+  border-radius: 25px; /* Slightly larger radius for a softer look */
+  border: none;
+  font-size: 22px; /* Slightly larger font for readability */
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--primary-text-color);
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover */
+}
+
+.save-button:hover {
+  background-color: #e07ab3; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.toggle-saved-button {
+  background-color: #54A097;
+  padding: 0.75rem 1.5rem; /* Increased padding to match save-button */
+  border-radius: 25px; /* Consistent radius */
+  border: none;
+  font-size: 1.1rem; /* Consistent font size */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+}
+
+.toggle-saved-button:hover {
+  background-color: #b0b5bb; /* Darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Rest of your CSS remains unchanged */
+
+.saved-planners {
+  margin-top: 1.5rem;
+}
+
+.saved-planners-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.saved-planners-list {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+}
+
+.saved-planner-item {
+  color: #3b82f6;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-bottom: 0.25rem;
+}
+
+.saved-planner-item:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 0 10px;
+  }
+
+  .planner-container {
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  .planner-buttons {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .planner-button {
+    width: 200px;
+    height: 80px;
+    font-size: 20px;
+  }
 }

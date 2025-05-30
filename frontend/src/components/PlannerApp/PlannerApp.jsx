@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './PlannerApp.css'; // Adjust the path as necessary
-import doodleStarLeft from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/camera.png'; // Adjust the path as necessary
-import doodleStarRight from './doodle-star-right.png';
-import doodleLeaf from './doodle-leaf.png';
-import doodleHeart from './doodle-heart.png';
-import doodleFlower from './doodle-flower.png';
-import calendarIcon from './calendar-icon.png';
+import './PlannerApp.css';
+import doodleStarLeft from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/star_12369058.png';
+import doodleStarRight from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/star_12369058.png';
+import doodleLeaf from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/nature.png';
+import doodleHeart from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/love_13555602.png';
+import doodleFlower from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/flower.png';
+import calendarIcon from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/calendar.png';
 
 const PlannerApp = () => {
   const [currentPlanner, setCurrentPlanner] = useState('Daily Planner');
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState(new Date('2025-05-30T19:02:00+0530'));
   const [showCalendar, setShowCalendar] = useState(false);
   const [plannerData, setPlannerData] = useState({
     thingsToDo: '', extraGoals: '', notesToSelf: '', forNext: ''
@@ -53,116 +53,136 @@ const PlannerApp = () => {
   };
 
   const renderCalendar = () => {
-    const daysInMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 0).getDate();
-    const firstDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1).getDay();
-    const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
-    const blanks = Array.from({ length: firstDay }, (_, i) => i);
+  const daysInMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 0).getDate();
+  const firstDay = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1).getDay();
+  const days = Array.from({ length: daysInMonth }, (_, i) => i + 1);
+  const blanks = Array.from({ length: firstDay }, (_, i) => i);
 
-    return (
-      <div className="absolute top-20 right-0 bg-white p-4 shadow-lg rounded z-10">
-        <div className="flex justify-between mb-2">
-          <button onClick={() => setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth() - 1, 1))}>Prev</button>
-          <span>{selectedDate.toLocaleString('default', { month: 'long', year: 'numeric' })}</span>
-          <button onClick={() => setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 1))}>Next</button>
-        </div>
-        <div className="grid grid-cols-7 gap-1">
-          {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
-            <div key={day} className="text-center font-bold">{day}</div>
-          ))}
-          {blanks.map((_, i) => <div key={`blank-${i}`} />)}
-          {days.map((day) => (
-            <button
-              key={day}
-              onClick={() => handleDateChange(new Date(selectedDate.getFullYear(), selectedDate.getMonth(), day))}
-              className={`p-2 ${selectedDate.getDate() === day ? 'bg-pink-300' : 'bg-gray-100'} rounded`}
-            >
-              {day}
-            </button>
-          ))}
-        </div>
+  return (
+    <div className="calendar-container">
+      <div className="calendar-header">
+        <button
+          onClick={() => setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth() - 1, 1))}
+          className="calendar-nav-button"
+        >
+          &lt;
+        </button>
+        <span className="calendar-title">
+          {selectedDate.toLocaleString('default', { month: 'long', year: 'numeric' })}
+        </span>
+        <button
+          onClick={() => setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 1))}
+          className="calendar-nav-button"
+        >
+          &gt;
+        </button>
       </div>
-    );
-  };
+      <div className="calendar-grid">
+        {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map((day) => (
+          <div key={day} className="calendar-day-header">{day}</div>
+        ))}
+        {blanks.map((_, i) => (
+          <div key={`blank-${i}`} className="calendar-blank" />
+        ))}
+        {days.map((day) => (
+          <button
+            key={day}
+            onClick={() => handleDateChange(new Date(selectedDate.getFullYear(), selectedDate.getMonth(), day))}
+            className={`calendar-day ${
+              selectedDate.getDate() === day &&
+              selectedDate.getMonth() === new Date(selectedDate.getTime()).getMonth() &&
+              selectedDate.getFullYear() === new Date(selectedDate.getTime()).getFullYear()
+                ? 'calendar-day-selected'
+                : ''
+            }`}
+          >
+            {day}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
 
   const forNextLabel = currentPlanner === 'Daily Planner' ? 'For Tomorrow' : currentPlanner === 'Weekly Planner' ? 'For Next Week' : 'For Next Month';
 
   return (
-    <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
-      <div className="flex space-x-4 mb-6 relative">
-        <img src={doodleStarLeft} alt="Star Left" className="absolute left-[-40px] top-0 w-8 h-8" />
-        <button onClick={() => handlePlannerChange('Daily Planner')} className="bg-pink-200 px-4 py-2 rounded">Daily Planner</button>
-        <button onClick={() => handlePlannerChange('Weekly Planner')} className="bg-pink-200 px-4 py-2 rounded">Weekly Planner</button>
-        <button onClick={() => handlePlannerChange('Monthly Planner')} className="bg-pink-200 px-4 py-2 rounded">Monthly Planner</button>
-        <img src={doodleStarRight} alt="Star Right" className="absolute right-[-40px] top-0 w-8 h-8" />
+    <div className="app-container">
+      <div className="planner-buttons">
+        <img src={doodleStarLeft} alt="Star Left" className="doodle-icon" />
+        <button onClick={() => handlePlannerChange('Daily Planner')} className="planner-button">Daily Planner</button>
+        <button onClick={() => handlePlannerChange('Weekly Planner')} className="planner-button">Weekly Planner</button>
+        <button onClick={() => handlePlannerChange('Monthly Planner')} className="planner-button">Monthly Planner</button>
+        <img src={doodleStarRight} alt="Star Right" className="doodle-icon" />
       </div>
-      <div className="bg-white p-6 rounded-lg shadow-lg relative w-full max-w-2xl">
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold">{currentPlanner}</h2>
-          <div className="flex items-center space-x-2">
-            <span className="text-pink-300">Date: {selectedDate.toLocaleDateString()}</span>
+      <div className="planner-container">
+        <div className="planner-header">
+          <h2 className="planner-title">{currentPlanner}</h2>
+          <div className="date-container">
+            <span className="date-text">Date: {selectedDate.toLocaleString('en-US', { weekday: 'long', hour: '2-digit', minute: '2-digit', timeZoneName: 'short', hour12: true })}</span>
             <img
               src={calendarIcon}
               alt="Calendar"
-              className="w-6 h-6 cursor-pointer"
+              className="calendar-icon"
               onClick={() => setShowCalendar(!showCalendar)}
             />
           </div>
         </div>
         {showCalendar && renderCalendar()}
-        <div className="grid grid-cols-2 gap-4 mb-4">
-          <div className="bg-purple-100 p-4 rounded relative">
-            <h3 className="font-semibold">Things to Do</h3>
+        <div className="planner-grid">
+          <div className="section things-to-do">
+            <h3 className="section-title">Things to Do</h3>
             <textarea
               value={plannerData.thingsToDo}
               onChange={(e) => handleInputChange('thingsToDo', e.target.value)}
-              className="w-full h-32 p-2 border rounded"
+              className="section-textarea"
               placeholder="• Item 1\n• Item 2"
             />
-            <img src={doodleLeaf} alt="Leaf" className="absolute bottom-2 left-2 w-6 h-6" />
+            <img src={doodleFlower} alt="Flower" className="doodle-icon section-doodle" />
           </div>
-          <div className="bg-pink-100 p-4 rounded relative ml-[15px]">
-            <h3 className="font-semibold">Extra Goals</h3>
+          <div className="section extra-goals">
+            <h3 className="section-title">Extra Goals</h3>
             <textarea
               value={plannerData.extraGoals}
               onChange={(e) => handleInputChange('extraGoals', e.target.value)}
-              className="w-full h-32 p-2 border rounded"
+              className="section-textarea"
             />
-            <img src={doodleHeart} alt="Heart" className="absolute top-2 right-2 w-6 h-6" />
+            <img src={doodleHeart} alt="Heart" className="doodle-icon section-doodle" />
           </div>
-          <div className="bg-purple-100 p-4 rounded relative">
-            <h3 className="font-semibold">Notes to Self</h3>
+          <div className="section notes-to-self">
+            <h3 className="section-title">Notes to Self</h3>
             <textarea
               value={plannerData.notesToSelf}
               onChange={(e) => handleInputChange('notesToSelf', e.target.value)}
-              className="w-full h-32 p-2 border rounded"
+              className="section-textarea"
             />
-            <img src={doodleFlower} alt="Flower" className="absolute bottom-2 left-2 w-6 h-6" />
+            <img src={doodleLeaf} alt="Leaf" className="doodle-icon section-doodle" />
           </div>
-          <div className="ml-[5px]">
-            <div className="bg-purple-200 p-4 rounded mb-2">
-              <h3 className="font-semibold text-white">Love Yourself More</h3>
+          <div className="section for-next">
+            <div className="quote-section">
+              <h3 className="quote-title">LOVE YOUR SELF MORE</h3>
             </div>
-            <div className="bg-pink-100 p-4 rounded">
-              <h3 className="font-semibold">{forNextLabel}</h3>
+            <div className="for-next-section">
+              <h3 className="section-title">{forNextLabel}</h3>
               <textarea
                 value={plannerData.forNext}
                 onChange={(e) => handleInputChange('forNext', e.target.value)}
-                className="w-full h-16 p-2 border rounded"
+                className="section-textarea for-next-textarea"
                 placeholder="• Item 1\n• Item 2"
               />
             </div>
           </div>
         </div>
-        <div className="flex justify-between">
-          <button onClick={handleSave} className="bg-pink-300 px-4 py-2 rounded">save</button>
-          <button onClick={() => setShowSaved(!showSaved)} className="bg-gray-200 px-4 py-2 rounded">
+        <div className="action-buttons">
+          <button onClick={handleSave} className="save-button">Save</button>
+          <button onClick={() => setShowSaved(!showSaved)} className="toggle-saved-button">
             {showSaved ? 'Hide Saved Planners' : 'Show Saved Planners'}
           </button>
         </div>
         {showSaved && (
-          <div className="mt-4">
-            <h3 className="font-semibold">Saved Planners</h3>
-            <ul className="list-disc pl-5">
+          <div className="saved-planners">
+            <h3 className="saved-planners-title">Saved Planners</h3>
+            <ul className="saved-planners-list">
               {Object.keys(savedPlanners).map((key) => (
                 <li
                   key={key}
@@ -172,7 +192,7 @@ const PlannerApp = () => {
                     setSelectedDate(new Date(date));
                     setShowSaved(false);
                   }}
-                  className="cursor-pointer text-blue-500"
+                  className="saved-planner-item"
                 >
                   {key}
                 </li>

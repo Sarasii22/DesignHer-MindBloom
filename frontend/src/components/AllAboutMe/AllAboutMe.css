@@ -4,8 +4,7 @@
   border-radius: 100px;
   font-family: Arial, sans-serif;
   max-width: 800px;
-  align-items: center;
-  justify-content: center;
+  margin: 0 auto;
   border-color: var(--text-color7);
   border-style: solid;
   border-width: 2px;
@@ -22,24 +21,34 @@
 
 .section {
   margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 .hobbies {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 20px;
 }
 
-.hobbies .input-section {
+.hobbies .input-section.hobbies-white {
   flex: 1;
-  margin: 0 10px;
+  margin: 0;
   background-color: #FFFFFF;
-  border-radius: 50px;
-  width: 310px;
-  height: 379px;
+  border-radius: 10px;
+  width: 300px;
+  height: auto;
   border: 2px solid #000000;
-  align-items: center;
   padding: 10px;
+}
+
+.hobbies .input-section.personal-info {
+  flex: 1;
+  margin: 0;
+  background: none;
+  padding: 0;
+  width: 300px;
 }
 
 .hobbies .input-section h2 {
@@ -48,42 +57,25 @@
   margin-bottom: 10px;
   font-family: 'Margarine', cursive;
   font-weight: 90;
-  margin-top: 15px;
 }
 
 .hobbies .input-section textarea {
   width: 100%;
-  height: 250px;
+  height: 100px;
   background: repeating-linear-gradient(transparent, transparent 24px, #d4b4b4 24px, #ceb1b1 25px);
   outline: none;
   resize: vertical;
   font-family: Arial, sans-serif;
-  border: none; 
+  border: none;
   margin-top: 8px;
-
 }
 
 .hobbies .doodle-icon {
-  width: 224.97px;
-  height: 225.44px;
-  margin-right: 20px;
-  border-radius: 32px;
+  width: 100px;
+  height: 100px;
+  margin-right: 0;
+  border-radius: 10px;
   transform: rotate(-15deg);
-}
-
-.personal-info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-}
-
-.personal-info .input-section {
-  padding: 0;
-  margin-bottom: 20px;
-  border: none;
-  background: none;
-  width: 100%;
 }
 
 .personal-info .input-section div {
@@ -92,15 +84,16 @@
   margin-bottom: 10px;
   padding: 5px;
   border-radius: 5px;
+  background-color: #fce4ec;
   width: 100%;
 }
 
 .personal-info .input-section .name {
-  background-color: #fce4ec;
+  background-color: #8f4d63 !important ;
 }
 
 .personal-info .input-section .age {
-  background-color: #e6f0fa;
+  background-color: #fce4ec;
 }
 
 .personal-info .input-section .address {
@@ -115,46 +108,63 @@
 }
 
 .personal-info .input-section textarea {
-  width: 200px;
-  height: 60px;
-  background: none;
-  border: 1px solid #ddd;
+  width: 150px;
+  height: 24px;
+  background: repeating-linear-gradient(transparent, transparent 24px, #d4b4b4 24px, #ceb1b1 25px);
+  border: none;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
   font-size: 14px;
   flex: 1;
-  resize: vertical;
+  resize: none;
   font-family: Arial, sans-serif;
+  line-height: 24px;
+  overflow: hidden;
+}
+
+.personal-info .input-section textarea:focus {
+  outline: none;
+  border: none;
 }
 
 .fun-likes-favorites {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
 }
 
 .left-sections {
   flex: 1;
 }
 
-.fun-facts, .likes {
-  display: flex;
-  align-items: center;
+.fun-facts .input-section.pink-section {
+  flex: 1;
+  margin: 0;
+  background-color: #fce4ec;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.favorites {
-  display: flex;
-  align-items: center;
+.likes .input-section.likes-white {
   flex: 1;
+  margin: 0;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 10px;
 }
 
-.favorites .input-section {
+.favorites .input-section.favorites-white {
   flex: 1;
+  margin: 0;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .labeled-input {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .labeled-input label {
@@ -163,13 +173,18 @@
   margin-right: 10px;
 }
 
-.labeled-input input {
+.labeled-input textarea {
   flex: 1;
-  background-color: #fce4ec;
-  border: 1px solid #ddd;
+  background: repeating-linear-gradient(transparent, transparent 24px, #d4b4b4 24px, #ceb1b1 25px);
+  border: none;
   border-radius: 5px;
-  padding: 10px;
+  padding: 5px;
   font-size: 14px;
+}
+
+.labeled-input textarea:focus {
+  outline: none;
+  border: none;
 }
 
 .input-section h2 {
@@ -177,27 +192,42 @@
   margin-bottom: 10px;
 }
 
-.input-section input {
+.input-section textarea {
   display: block;
   width: 100%;
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ddd;
+  margin-bottom: 5px;
+  padding: 5px;
+  border: none;
   border-radius: 5px;
   font-size: 14px;
+}
+
+.input-section textarea:focus {
+  outline: none;
+  border: none;
 }
 
 .doodle-icon {
   width: 50px;
   height: 50px;
-  margin-right: 20px;
+  margin-right: 0;
+}
+
+.future .input-section.pink-section {
+  flex: 1;
+  margin: 0;
+  background-color: #fce4ec;
+  border-radius: 10px;
+  padding: 10px;
 }
 
 .future {
-  flex-direction: row-reverse;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .future .doodle-icon {
-  margin-left: 20px;
-  margin-right: 0;
+  margin-left: 0;
+  margin-right: 10px;
 }
