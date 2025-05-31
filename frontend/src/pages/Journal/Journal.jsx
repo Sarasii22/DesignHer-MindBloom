@@ -7,8 +7,9 @@ import PlannerApp from '../../components/PlannerApp/PlannerApp';
 const JournalPage = () => {
   return (
     <div className="journal-page">
-      <h1 className="journal-title">My Journal</h1>
       <div className="journal-content">
+      <h1 className="journal-title">My Journal</h1>
+      
         <AllAboutMe /> {/* Embed the AllAboutMe worksheet */}
         <VisionBoard /> {/* Embed the VisionBoard component */}
         <PlannerApp /> {/* Embed the PlannerApp component */}

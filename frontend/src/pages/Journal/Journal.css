@@ -15,10 +15,12 @@
 }
 
 .journal-title {
-  text-align: center;
-  color: #333;
-  font-size: 28px;
+  color: var(--text-color7);
+  font-family: 'Margarine', cursive;
+  font-weight: 120;
+  font-size: 56px;
   margin-bottom: 20px;
+  margin-left: 120px;
 }
 
 .journal-content {
@@ -28,8 +30,8 @@
   padding: 40px;
   margin: 20px;
   gap: 20px;
-  border: 2px solid #d6a8e9; /* Added border with matching color */
-  border-radius: 60px; /* Added border radius to match journal-page */
+  border: 2px solid #d6a8e9;
+  border-radius: 60px;
 }
 
 .empty-space {

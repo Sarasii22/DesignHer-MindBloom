@@ -3,7 +3,7 @@
   padding: 20px;
   border-radius: 100px;
   font-family: Arial, sans-serif;
-  max-width: 800px;
+  width: 1119px;
   margin: 0 auto;
   border-color: var(--text-color7);
   border-style: solid;
@@ -29,26 +29,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 170px;
 }
 
 .hobbies .input-section.hobbies-white {
-  flex: 1;
+  flex: 0 0 310px;
   margin: 0;
-  background-color: #FFFFFF;
-  border-radius: 10px;
-  width: 300px;
-  height: auto;
+  background-color: var(--white);
+  border-radius: 50px;
+  width: 310px;
+  height: 379px;
   border: 2px solid #000000;
   padding: 10px;
 }
 
 .hobbies .input-section.personal-info {
-  flex: 1;
+  flex: 0 0 410px;
   margin: 0;
   background: none;
   padding: 0;
-  width: 300px;
+  width: 410px;
+  
 }
 
 .hobbies .input-section h2 {
@@ -61,7 +62,7 @@
 
 .hobbies .input-section textarea {
   width: 100%;
-  height: 100px;
+  height: 80%;
   background: repeating-linear-gradient(transparent, transparent 24px, #d4b4b4 24px, #ceb1b1 25px);
   outline: none;
   resize: vertical;
@@ -70,95 +71,129 @@
   margin-top: 8px;
 }
 
+.hobbies .input-section.personal-info div{
+  background-color: #F8E3FB;
+  border-radius: 40px;
+  margin-bottom: 20px;
+  border: 2px solid #A575AB;
+  width: 401px;
+  height: 106px;
+  text-align: center;
+  padding: 20px;
+}
+
 .hobbies .doodle-icon {
   width: 100px;
   height: 100px;
   margin-right: 0;
   border-radius: 10px;
   transform: rotate(-15deg);
+  left: 40%;
 }
 
-.personal-info .input-section div {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: #fce4ec;
-  width: 100%;
-}
 
-.personal-info .input-section .name {
-  background-color: #8f4d63 !important ;
-}
-
-.personal-info .input-section .age {
-  background-color: #fce4ec;
-}
-
-.personal-info .input-section .address {
-  background-color: #fce4ec;
-}
-
-.personal-info .input-section label {
-  width: 60px;
-  color: #9b59b6;
-  margin-right: 10px;
+.hobbies .input-section.personal-info label{
+  color: var(--primary-text-color);
+  font-size: 36px;
+  font-family: 'Inria Sans';
   text-align: right;
+  font-style: italic;
 }
 
-.personal-info .input-section textarea {
-  width: 150px;
-  height: 24px;
-  background: repeating-linear-gradient(transparent, transparent 24px, #d4b4b4 24px, #ceb1b1 25px);
+
+
+.hobbies .input-section.personal-info input {
+  font-size: 16px;
+  background-color: #F8E3FB;
   border: none;
-  border-radius: 5px;
-  padding: 5px;
-  font-size: 14px;
-  flex: 1;
-  resize: none;
-  font-family: Arial, sans-serif;
-  line-height: 24px;
-  overflow: hidden;
+  margin-left: 5px;
 }
 
-.personal-info .input-section textarea:focus {
+.hobbies .input-section.personal-info input:focus {
   outline: none;
   border: none;
 }
 
-.fun-likes-favorites {
+.section.fun-likes-favorites {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .left-sections {
   flex: 1;
 }
 
-.fun-facts .input-section.pink-section {
-  flex: 1;
+.section.fun-facts .input-section.pink-section {
+  flex: 0 0 437px;
   margin: 0;
-  background-color: #fce4ec;
-  border-radius: 10px;
-  padding: 10px;
+  background-color: var(--btn-color6);
+  border-radius: 35px;
+  padding: 20px;
+  width: 437px;
+  height: 236px;
+   border: 2px solid #000000 !important;
 }
 
-.likes .input-section.likes-white {
-  flex: 1;
+.section.likes div {
+  flex: 0 0 437px;
   margin: 0;
-  background-color: #FFFFFF;
-  border-radius: 10px;
-  padding: 10px;
+  background-color: var(--white);
+  border-radius: 35px;
+  padding: 20px;
+  width: 437px;
+  height: 236px;
+  border: 2px solid #000000 !important;
 }
 
-.favorites .input-section.favorites-white {
-  flex: 1;
-  margin: 0;
-  background-color: #FFFFFF;
-  border-radius: 10px;
-  padding: 10px;
+.section .fun-facts h2{
+  font-family: 'Margarine';
+  color: var(--text-color9);
+  font-weight: 200;
+  text-align: center;
+  font-size: 32px;
+}
+
+.section.fun-likes-favorites .input-section.pink-section textarea{
+  background-color: transparent;
+}
+
+.section.likes .input-section.likes-white h2{
+  font-family: 'Margarine';
+  color: var(--text-color7);
+  text-align: center;
+  font-weight: 200;
+  font-size: 32px;
+}
+
+
+.section.fun-likes-favorites .left-sections .section.likes .doodle-icon{
+  width: 158px;
+  height: 158px;
+  transform: rotate(15deg);
+  top: -105px;
+  left: -40px;
+}
+
+.section.favorites{
+  width: 437px;
+  height: 469px;
+  background-color: var(--white);
+  border: 2px solid #000000;
+}
+
+.section.section.favorites h2{
+  font-family: 'Margarine';
+  color: var(--text-color7);
+  font-size: 32px;
+  text-align: center;
+  font-weight: 200;
+}
+
+.section.section.favorites label{
+  color: var(--primary-text-color);
+  font-family: 'Tsukimi Rounded';
+  font-size: 14px;
 }
 
 .labeled-input {
@@ -207,18 +242,40 @@
   border: none;
 }
 
-.doodle-icon {
-  width: 50px;
-  height: 50px;
-  margin-right: 0;
+.section.favorites .doodle-icon {
+  width: 110px;
+  height: 110px;
+  right: -25px;
+  bottom: -45px;
+}
+
+.section.future{
+  width: 985px;
+  height: 236px;
+  background-color: #F5D6F9;
+  border: 2px solid #000000;
+  align-items: center;
+  margin-left: 45px;
+   flex: 0 0 986px;
+  border-radius: 35px;
+}
+
+.section.future h2{
+  font-family: 'Margarine';
+  color: var(--text-color9);
+  font-size: 32px;
+  text-align: center;
+  font-weight: 200;
 }
 
 .future .input-section.pink-section {
-  flex: 1;
+ 
   margin: 0;
-  background-color: #fce4ec;
+  
   border-radius: 10px;
   padding: 10px;
+  width: 986px;
+  height: 236px;
 }
 
 .future {
@@ -228,6 +285,9 @@
 }
 
 .future .doodle-icon {
-  margin-left: 0;
-  margin-right: 10px;
+  width: 158px;
+  height: 158px;
+  left: -70px;
+  top: 120px;
+  transform: rotate(10deg);
 }
