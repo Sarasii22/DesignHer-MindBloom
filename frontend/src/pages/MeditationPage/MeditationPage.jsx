@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './MeditationPage.css'; // Adjust the path as necessary
-import doodleZen from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/calendar.png'; // Placeholder path
-import doodleLotus from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/nature.png'; // Placeholder path
+import doodleZen from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/yoga.png'; // Placeholder path
+import doodleLotus from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/lotus-flower.png'; // Placeholder path
 
 const MeditationPage = () => {
   const [time, setTime] = useState(300); // Default 5 minutes in seconds
