@@ -8,7 +8,7 @@ function GetStarted() {
       <div className="get-started-container">
         <h1>Start Your Wellness Journey</h1>
         <p>Join thousands of students using MindBloom to nurture their mental health.</p>
-        <Link to="/signup" className="get-started-button">
+        <Link to="/journal" className="get-started-button">
           Get Started Now
         </Link>
       </div>
