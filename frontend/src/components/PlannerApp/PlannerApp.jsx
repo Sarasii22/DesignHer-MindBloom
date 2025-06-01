@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './PlannerApp.css';
-import doodleStarLeft from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/star_12369058.png';
-import doodleStarRight from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/star_12369058.png';
-import doodleLeaf from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/nature.png';
-import doodleHeart from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/love_13555602.png';
-import doodleFlower from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/flower.png';
-import calendarIcon from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/calendar.png';
+import doodleStarLeft from '../../assets/journal/star_12369058.png';
+import doodleStarRight from '../../assets/journal/star_12369058.png';
+import doodleLeaf from '../../assets/journal/nature.png';
+import doodleHeart from '../../assets/journal/love_13555602.png';
+import doodleFlower from '../../assets/journal/flower.png';
+import calendarIcon from '../../assets/journal/calendar.png';
 
 const PlannerApp = () => {
   const [currentPlanner, setCurrentPlanner] = useState('Daily Planner');

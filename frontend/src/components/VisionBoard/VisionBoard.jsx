@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './VisionBoard.css';
-import cameraIcon from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/camera.png'; // Adjust path as needed
+import cameraIcon from '../../assets/journal/camera.png'; // Adjust path as needed
 
 const VisionBoard = () => {
   // Initialize frames to spread across 1000x1200px container without gaps

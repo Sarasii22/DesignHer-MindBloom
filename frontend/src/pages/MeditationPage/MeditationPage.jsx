@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './MeditationPage.css'; // Adjust the path as necessary
-import doodleZen from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/yoga.png'; // Placeholder path
-import doodleLotus from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/lotus-flower.png'; // Placeholder path
+import doodleZen from '../../assets/journal/yoga.png'; // Placeholder path
+import doodleLotus from '../../assets/journal/lotus-flower.png'; // Placeholder path
 
 const MeditationPage = () => {
   const [time, setTime] = useState(300); // Default 5 minutes in seconds
@@ -42,9 +42,9 @@ const MeditationPage = () => {
   };
 
   const audioTracks = [
-    { id: 1, title: 'Calm Flute', src: 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/music/eastern-guitar-and-flute-292114.mp3' }, // Placeholder path
-    { id: 2, title: 'Nature', src: 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/music/nature-documentary-309042.mp3' }, // Placeholder path
-    { id: 3, title: 'Gentle Rain', src: 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/music/gentle-rain-for-relaxation-and-sleep-337279.mp3' }, // Placeholder path
+    { id: 1, title: 'Calm Flute', src: '../../assets/music/eastern-guitar-and-flute-292114.mp3' }, // Placeholder path
+    { id: 2, title: 'Nature', src: '../../assets/music/nature-documentary-309042.mp3' }, // Placeholder path
+    { id: 3, title: 'Gentle Rain', src: '../../assets/music/gentle-rain-for-relaxation-and-sleep-337279.mp3' }, // Placeholder path
   ];
 
   const handleTrackSelect = (track) => {

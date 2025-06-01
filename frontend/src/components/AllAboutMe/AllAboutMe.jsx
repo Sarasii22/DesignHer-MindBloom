@@ -1,9 +1,9 @@
 import React from 'react';
 import './AllAboutMe.css';
-import astronautIcon from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/astronaut.jpg';
-import heartIcon from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/love_13555602.png';
-import ghostHappyIcon from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/melting_13879044.png';
-import ghostSmileyIcon from 'C:/Desktop/new/DesignHer-MindBloom/frontend/src/assets/journal/witch_16086401.png';
+import astronautIcon from '../../assets/journal/astronaut.jpg';
+import heartIcon from '../../assets/journal/love_13555602.png';
+import ghostHappyIcon from '../../assets/journal/melting_13879044.png';
+import ghostSmileyIcon from '../../assets/journal/witch_16086401.png';
 
 const AllAboutMe = () => {
   return (
