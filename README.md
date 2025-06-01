@@ -38,6 +38,11 @@ MindBloom is a web application with four core pages tailored to support the ment
 - Deployed Vercel link
     https://design-her-mind-bloom.vercel.app/
 
+  - Deployment Update
+        Note: The application has been redeployed due to an issue with the previous deployment link not functioning correctly.
+        The updated live version is now available at: https://design-her-mind-bloom-xlz5.vercel.app/
+        I apologize for any inconvenience caused. 
+
 - Figma design/prototype link
     https://www.figma.com/design/auRe9snTWb3AdstiNsmwRS/MindBloom?node-id=0-1&t=IBWv5VtInkWOIPnq-1
 
